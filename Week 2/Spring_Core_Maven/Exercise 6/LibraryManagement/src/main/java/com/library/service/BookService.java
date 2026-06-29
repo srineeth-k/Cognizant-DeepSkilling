@@ -1,0 +1,18 @@
+package com.library.service;
+
+import com.library.repository.BookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class BookService {
+
+    @Autowired
+    private BookRepository bookRepository;
+
+    public void manageCatalog() {
+        System.out.println("[BookService] Service executing under annotation-based configurations.");
+        bookRepository.registerBook("Domain-Driven Design");
+        bookRepository.showCatalog();
+    }
+}
